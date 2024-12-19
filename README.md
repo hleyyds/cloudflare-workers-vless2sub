@@ -1,4 +1,4 @@
-# 优选订阅生成器 WorkerVless2sub
+# cloudflare-workers-vless2sub
 ![sub](./sub.png)
 ### 这个是一个通过 Cloudflare Workers 搭建，自动生成优选线路 VLESS / Trojan 节点订阅内容生成器 [[实现原理]](https://www.youtube.com/watch?v=p-KhFJAC4WQ&t=70s)
 
@@ -98,32 +98,34 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 
 
  **3.2 修改 addressesapi 参数示例**
- 
+
  - 修改 `addressesapi` 参数，在脚本中设置 `addressesapi` 变量为 **优选IP地址txt文件** 的 URL。例如：
 	```js
 	let addressesapi = [
 		'https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt',
+
  		'https://addressesapi.090227.xyz/CloudFlareYes',
-	];
-	```
-	可参考 [addressesapi.txt](https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt) 内容格式 自行搭建。
+ 	];
+ 	```
+ 	可参考 [addressesapi.txt](https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt) 内容格式 自行搭建。
 
 
 <details>
 <summary><code><strong>「 我不是小白！我有IP库！我知道IPtest是什么！我也有csv测速文件！ 」</strong></code></summary>
 
- 
+
   **3.3 修改 addressescsv 参数示例**
-  
+
  - 修改 `addressescsv` 参数，在脚本中设置 `addressescsv` 变量为 **iptest测速结果csv文件地址** 的 URL。例如：
 	```js
 	let DLS = 4;//速度下限
 	let addressescsv = [
 		'https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressescsv.csv',
+
  		'https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressescsv.csv',
-	];
-	```
-	`DLS` 为要求满足的最低速度，不满足改数值以上的IP将不会添加至优选订阅内容。注意：不考虑单位，只看数值，请按照您的测速结果而定。
+ 	];
+ 	```
+ 	`DLS` 为要求满足的最低速度，不满足改数值以上的IP将不会添加至优选订阅内容。注意：不考虑单位，只看数值，请按照您的测速结果而定。
 
  </details>
 
@@ -132,7 +134,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 # 订阅生成器 使用方法 [视频教程](https://youtu.be/OjqCKeEY7DQ)
 
   例如您的workers项目域名为：`sub.cmliussss.workers.dev`；
-  
+
 ## 1. 快速订阅
 
    - 添加 `TOKEN` 变量，快速订阅访问入口，默认值为: `auto` ，获取订阅器默认节点订阅地址即 `/auto` ，例如：
@@ -224,5 +226,4 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)，**感谢[Alice Networ
 
 # 致谢
 <a href="https://alice.ws/aff.php?aff=15"><img src="https://alicenetworks.net/templates/lagom2/assets/img/logo/logo_big.194980063.png" width="150" height="75" alt="Alice Networks LTD"/></a>，[SAKURA-YUMI](https://github.com/SAKURA-YUMI)，[EzSync](https://github.com/EzSync)、[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash/config)、[3Kmfi6HP](https://github.com/6Kmfi6HP/EDtunnel/blob/main/.github/workflows/obfuscator.yml)
-
 
